@@ -1,0 +1,28 @@
+# Configuracion de la base de datos H2
+spring:
+  security:
+    user:
+      name: user
+      password: user
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: h2
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:company
+    driverClassName: org.h2.Driver
+    username: root
+    password: root
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      mode: embedded
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.springframework.security: DEBUG
+
